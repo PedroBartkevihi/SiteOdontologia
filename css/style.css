@@ -547,3 +547,113 @@ section.depoimento figcaption{
 	font-weight: 500;
 	letter-spacing: 0.04em;
 }
+
+section.etapas{
+	padding: var(--espaco-secao) 0;
+}
+
+section.etapas > .container{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 56px clamp(32px, 5vw, 72px);
+	align-items: center;
+}
+
+section.etapas h2{
+	grid-column: 1 / -1;
+	color: var(--cor-texto);
+	font-size: clamp(1.5rem, 2.6vw, 1.875rem);
+	text-align: center;
+}
+
+section.etapas h2 strong{
+	color: var(--verde);
+	font-weight: 700;
+}
+
+.etapas__group{
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.etapas__group + .etapas__group{
+	margin-top: 28px;
+}
+
+.etapas__group:nth-child(2){
+	flex-direction: row-reverse;
+	text-align: right;
+}
+
+.etapas__group img{
+	flex-shrink: 0;
+	width: 200px;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: 50%;
+	box-shadow: var(--sombra-suave);
+}
+
+.etapas__group:nth-child(2) img{
+	width: 170px;
+}
+
+.etapas__group:nth-child(3) img{
+	width: 150px;
+	margin-left: 40px;
+}
+
+.etapas__group figcaption{
+	max-width: 20ch;
+	color: var(--verde);
+	font-size: 0.9375rem;
+	font-weight: 500;
+}
+
+.etapas__group2{
+	position: relative;
+	display: flex;
+	gap: 20px;
+	padding-bottom: 26px;
+}
+
+.etapas__group2:last-child{
+	padding-bottom: 0;
+}
+
+.etapas__group2 .circle{
+	display: grid;
+	flex-shrink: 0;
+	place-items: center;
+	width: 64px;
+	height: 64px;
+	border: 1px solid var(--cor-borda);
+	border-radius: 50%;
+	background-color: #fff;
+	color: var(--verde);
+	font-size: 1.75rem;
+	font-weight: 300;
+}
+
+.line{
+	position: absolute;
+	top: 64px;
+	bottom: 0;
+	left: 32px;
+	width: 1px;
+	background-color: var(--cor-borda);
+}
+
+.etapas__descricao h3{
+	margin-top: 6px;
+	color: var(--verde);
+	font-size: 1.0625rem;
+	font-weight: 700;
+}
+
+.etapas__descricao p{
+	margin-top: 4px;
+	color: var(--cor-texto-suave);
+	font-size: 0.9375rem;
+}
