@@ -20,6 +20,14 @@ A referência é o último commit, não a branch, porque o conteúdo da branch m
 
 <!-- passagens abaixo, a mais recente primeiro -->
 
+## Passagem: modernização do projeto_09 — publicada (18/10/2026, Claude)
+- Objetivo: o mesmo da passagem de implementação, mais abaixo.
+- Etapa: publicação autorizada e feita. O Pedro pediu a publicação com o nome do repositório trocado ("Troca o nome, sobe com o nome SiteOdontologia", 18/10/2026). Repositório público `PedroBartkevihi/SiteOdontologia`, criado pelo navegador; `main` enviada a partir de `b026bfd`; GitHub Pages pela `main`, na raiz. Site: https://pedrobartkevihi.github.io/SiteOdontologia/
+- Código: `main`, último commit é o desta passagem (com o link no README), também enviado; a branch `claude/modernizacao` ficou só local, parada em `60ae0cc` (todos os commits dela estão na `main` pelo merge `ba97a59`); sem commit: nada.
+- Verificações: `curl` na página, no CSS, no JavaScript, no favicon e nas 8 fotos do endereço publicado → 200 em todos; Chrome sem interface no endereço publicado, em 375 e 1440px → JavaScript ativo, botões de envio ativados, menu abre, Roboto carregada, ondas e favicon presentes, sem rolagem horizontal.
+- Pendências: nenhuma desta tarefa.
+- Próxima ação: nenhuma; uma tarefa nova começa com uma passagem nova.
+
 ## Passagem: modernização do projeto_09 — integrada na main (18/10/2026, Claude)
 - Objetivo: o mesmo da passagem de implementação, mais abaixo.
 - Etapa: integrado na main. O Pedro autorizou a integração ("Pode integrar a branch claude/modernizacao na main", 18/10/2026); merge com `--no-ff` no commit `ba97a59`, que traz os 30 commits da branch. O conteúdo da `main` ficou idêntico ao do último commit revisado da branch (`60ae0cc`; desde `bf71e7f`, aprovado pelo Codex, só mudou `docs/andamento.md`).

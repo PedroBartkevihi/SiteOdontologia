@@ -1,5 +1,7 @@
 # Clara Odontologia — Landing page de clínica (projeto de estudo)
 
+**Ver online:** https://pedrobartkevihi.github.io/SiteOdontologia/
+
 Landing page de uma clínica odontológica **fictícia**, especializada em alinhadores transparentes, criada **para fins de estudo**. O ponto de partida foi um exercício de curso de 2017 (o "Projeto 09"), feito em HTML e CSS com jQuery e Font Awesome, que retratava uma clínica real. O objetivo foi modernizar o código e o visual (layout, cores, tipografia, responsividade, acessibilidade e pequenas interações), mantendo as seções, a paleta verde-água, as ondas, as fotos redondas, a fonte Roboto e o estilo de escrita do código original.
 
 A **Clara Odontologia**, a **Dra. Helena Prado**, o telefone, o e-mail e o endereço são inventados e não correspondem a nenhuma pessoa ou empresa real. O telefone começa com 1, o que nenhum número de assinante no Brasil faz, e o e-mail usa o domínio reservado `.example`; assim, os links `tel:` e `mailto:` não chegam a ninguém.
