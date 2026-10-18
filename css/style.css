@@ -657,3 +657,84 @@ section.etapas h2 strong{
 	color: var(--cor-texto-suave);
 	font-size: 0.9375rem;
 }
+
+section.diferencas{
+	padding: var(--espaco-secao) 0;
+	background: linear-gradient(#fff, var(--cor-fundo-alt));
+}
+
+section.diferencas > .container{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	max-width: 860px;
+	text-align: center;
+}
+
+section.diferencas h2{
+	grid-column: 1 / -1;
+	margin-bottom: 44px;
+	color: var(--cor-texto);
+	font-size: clamp(1.5rem, 2.6vw, 1.875rem);
+}
+
+section.diferencas h2 strong{
+	font-weight: 700;
+}
+
+section.diferencas h2 span{
+	color: var(--verde);
+	font-weight: 700;
+}
+
+.diferencas__single{
+	padding: 0 24px;
+}
+
+.diferencas__single:first-of-type{
+	border-right: 1px solid var(--cor-borda);
+}
+
+.diferencas__single h3{
+	margin-bottom: 14px;
+	color: var(--cor-cinza);
+	font-size: 1.75rem;
+}
+
+.diferencas__single:last-of-type h3{
+	color: var(--verde);
+	font-weight: 700;
+}
+
+.item-diferencas-1,
+.item-diferencas-2{
+	margin-top: 12px;
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+
+.item-diferencas-1{
+	position: relative;
+	width: fit-content;
+	margin-right: auto;
+	margin-left: auto;
+	color: var(--cor-cinza);
+}
+
+.line-diferencas-1{
+	position: absolute;
+	top: 50%;
+	right: -6px;
+	left: -6px;
+	height: 3px;
+	border-radius: 3px;
+	background-color: var(--cor-risco);
+	transform: rotate(-4deg);
+}
+
+.item-diferencas-2{
+	color: var(--verde);
+}
+
+.item-diferencas-2 strong{
+	color: var(--verde-escuro);
+}
