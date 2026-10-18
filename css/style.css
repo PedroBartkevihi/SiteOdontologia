@@ -397,3 +397,37 @@ nav.menu .mobile.ativo span:nth-child(3){
 	border-radius: 50%;
 	box-shadow: var(--sombra-suave);
 }
+
+section.diferenciais{
+	padding: calc(var(--espaco-secao) * 0.6) 0 var(--espaco-secao);
+}
+
+section.diferenciais > .container{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(36px, 4vw, 56px) clamp(24px, 4vw, 48px);
+}
+
+.diferencial-single .icone{
+	width: 56px;
+	height: 56px;
+	color: var(--verde-icone);
+}
+
+.diferencial-single h3{
+	margin: 20px 0 12px;
+	color: var(--cor-texto);
+	font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+	font-weight: 300;
+	line-height: 1.25;
+}
+
+.diferencial-single h3 > strong{
+	color: var(--verde);
+	font-weight: 700;
+}
+
+.diferencial-single p{
+	color: var(--cor-texto-suave);
+	font-size: 0.9375rem;
+}
