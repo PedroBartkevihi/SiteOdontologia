@@ -483,3 +483,67 @@ section.sobre{
 .sobre-container p + h2{
 	margin-top: 36px;
 }
+
+section.depoimento{
+	position: relative;
+	padding: clamp(120px, 15vw, 210px) 0;
+	background: linear-gradient(120deg, var(--menta-1) 0%, #bdf6e6 50%, #93e7d0 100%);
+	text-align: center;
+}
+
+section.depoimento::before,
+section.depoimento::after{
+	content: "";
+	position: absolute;
+	right: 0;
+	left: 0;
+	height: clamp(60px, 9vw, 130px);
+	pointer-events: none;
+}
+
+section.depoimento::before{
+	top: -1px;
+	background: var(--onda-cima-branca) top / 100% 100% no-repeat;
+}
+
+section.depoimento::after{
+	bottom: -1px;
+	background: var(--onda-baixo-branca) bottom / 100% 100% no-repeat;
+}
+
+section.depoimento blockquote p{
+	max-width: 30ch;
+	margin: 0 auto;
+	color: var(--cor-texto);
+	font-size: clamp(1.375rem, 3vw, 2rem);
+	font-style: italic;
+	font-weight: 300;
+	line-height: 1.35;
+}
+
+section.depoimento blockquote p::before,
+section.depoimento blockquote p::after{
+	color: var(--verde-escuro);
+	font-size: 1.6em;
+	font-style: normal;
+	line-height: 0;
+	vertical-align: -0.35em;
+}
+
+section.depoimento blockquote p::before{
+	content: "\201C";
+	margin-right: 0.1em;
+}
+
+section.depoimento blockquote p::after{
+	content: "\201D";
+	margin-left: 0.1em;
+}
+
+section.depoimento figcaption{
+	margin-top: 14px;
+	color: var(--verde-escuro);
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+}
