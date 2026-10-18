@@ -1065,3 +1065,39 @@ footer p{
 		padding-top: 32px;
 	}
 }
+
+:focus-visible{
+	outline: 3px solid var(--verde-escuro);
+	outline-offset: 3px;
+}
+
+footer :focus-visible{
+	outline-color: #fff;
+}
+
+.form-chamada input[type=email]:focus-visible,
+.form-contato input:not([type=submit]):focus-visible,
+.form-contato textarea:focus-visible{
+	outline: none;
+}
+
+::selection{
+	background-color: var(--verde);
+	color: #fff;
+}
+
+@media (prefers-reduced-motion: no-preference){
+	html{
+		scroll-behavior: smooth;
+	}
+}
+
+@media (prefers-reduced-motion: reduce){
+	*,
+	*::before,
+	*::after{
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
