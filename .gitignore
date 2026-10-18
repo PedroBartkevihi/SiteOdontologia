@@ -6,3 +6,9 @@ Thumbs.db
 .vscode/
 .idea/
 .claude/
+
+# Arquivos de trabalho dos agentes (ficam só no computador)
+AGENTS.md
+CLAUDE.md
+docs/
+.github/

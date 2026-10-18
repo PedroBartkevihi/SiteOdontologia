@@ -21,8 +21,6 @@ A **Clara Odontologia**, a **Dra. Helena Prado**, o telefone, o e-mail e o ender
 | Layout com `float`, `div.clear` e estilos inline | Flexbox, grid, variáveis em `:root` e `clamp()` |
 | Sem `lang`, sem `h1`, imagens sem `alt` e contrastes de 1,5 a 3,2:1 | Estrutura semântica, `alt` em todas as fotos e contraste no padrão WCAG AA |
 
-O diagnóstico completo do original e o plano estão em [`docs/diagnostico.md`](docs/diagnostico.md).
-
 ## Tecnologias
 
 - HTML5 (página única, sem framework)
@@ -42,16 +40,10 @@ Projeto6/
 │   └── style.css
 ├── js/
 │   └── script.js
-├── images/
-│   ├── rosto.jpg           (seção "sobre")
-│   ├── round_images/       (as quatro fotos redondas do topo)
-│   └── etapas/             (as três fotos das etapas)
-├── docs/
-│   ├── diagnostico.md      (diagnóstico do original e plano)
-│   ├── decisoes.md         (decisões técnicas, com o estado de cada uma)
-│   └── andamento.md        (passagem de trabalho)
-├── AGENTS.md               (instruções para agentes de IA)
-└── CLAUDE.md
+└── images/
+    ├── rosto.jpg           (seção "sobre")
+    ├── round_images/       (as quatro fotos redondas do topo)
+    └── etapas/             (as três fotos das etapas)
 ```
 
 ## Interações (`js/script.js`)
@@ -71,10 +63,6 @@ python -m http.server 8080
 ```
 
 E acesse `http://localhost:8080`.
-
-## Como o projeto foi feito
-
-A modernização foi feita pelo Claude e revisada pelo Codex, com as decisões tomadas pelo Pedro. As regras desse trabalho estão no [`AGENTS.md`](AGENTS.md). As decisões, com quem propôs e quem decidiu, estão em [`docs/decisoes.md`](docs/decisoes.md), e o andamento, em [`docs/andamento.md`](docs/andamento.md).
 
 ## Próximos passos possíveis
 
