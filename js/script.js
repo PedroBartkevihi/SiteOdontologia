@@ -123,7 +123,7 @@
 			if(campo.required){
 				erro = regras.vazio;
 			}
-		}else if(campo.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor)){
+		}else if(campo.type === "email" && (campo.validity.typeMismatch || !/^[^\s@]+@([^\s@.]+\.)+[^\s@.]{2,}$/.test(valor))){
 			erro = regras.formato;
 		}else if(campo.type === "tel"){
 			var numeros = valor.replace(/\D/g, "").length;
