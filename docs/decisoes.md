@@ -19,6 +19,15 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 
 <!-- decisões abaixo, a mais recente primeiro -->
 
+## D11 — Formulários sem JavaScript (18/10/2026)
+- Estado: aceita (18/10/2026)
+- Proposta por: Codex (revisão do plano, rodada 1, commit `08b9ac2`), redigida pelo Claude; decidida por: Pedro
+- Contexto: sem servidor, o envio nativo de um formulário com `method="post"` (D7) cai numa página de erro (501 no `python -m http.server`, 405 no GitHub Pages), e o projeto exige que a página continue usável sem JavaScript.
+- Decisão: o botão de envio dos dois formulários vem desativado no HTML e o JavaScript o ativa. Sem JavaScript, um aviso junto ao formulário diz que o envio é só uma demonstração e mostra o telefone e o e-mail da clínica. Nada é enviado ao servidor. Com JavaScript, a confirmação também deixa claro que é uma demonstração.
+- Motivo: ninguém cai numa página de erro, e o contato continua possível pelo telefone e pelo e-mail.
+- Alternativas descartadas: deixar como no Projeto5 (envio por POST que termina em erro do servidor) — oferecida, o Pedro escolheu o botão desativado.
+- Implementação: ainda não.
+
 ## D1 — Identidade fictícia (18/10/2026)
 - Estado: aceita (18/10/2026)
 - Proposta por: Claude; decidida por: Pedro
@@ -58,7 +67,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 ## D5 — Menu único em JavaScript puro (18/10/2026)
 - Estado: aceita (18/10/2026)
 - Proposta por: Claude; decidida por: Pedro
-- Contexto: o menu está escrito três vezes e depende de jQuery 3.2.1 (com CVEs conhecidas) e do Font Awesome 4.7 (cerca de 1,1 MB para um ícone).
+- Contexto: a lista de links do menu está escrita duas vezes, com um terceiro bloco só para o ícone (corrigido em 18/10/2026: o texto original dizia "três vezes"; apontado pelo Codex), e depende de jQuery 3.2.1 (com CVEs conhecidas) e do Font Awesome 4.7 (cerca de 1,1 MB para um ícone).
 - Decisão: um `<nav>` só, com botão acessível (`aria-expanded`, `aria-controls`) que abre a lista no celular e fecha com Esc, com clique fora e ao escolher um item. Ícone das três barras em CSS. Sem jQuery e sem Font Awesome. Sem JavaScript, os links aparecem como lista.
 - Motivo: corrige os bugs do menu (bug 4 do diagnóstico) e tira duas dependências que só serviam para isso.
 - Alternativas descartadas: atualizar o jQuery para a versão mais nova — dependência inteira para cerca de 40 linhas.

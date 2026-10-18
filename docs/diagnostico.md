@@ -19,7 +19,7 @@ Escrito em 18/10/2026 pelo Claude, antes de qualquer código. As escolhas do pla
 
 ## Bugs
 
-1. A meta viewport usa `;` no lugar de `,` (inválido) e `maximum-scale=1.0`, que impede o zoom no celular.
+1. A meta viewport usa `;` no lugar de `,` (inválido) e `maximum-scale=1.0`, que tenta limitar o zoom no celular. Alguns navegadores ignoram essa trava por acessibilidade, mas os que a respeitam impedem a ampliação.
 2. Todos os links têm `href=""`: o menu só recarrega a página, e nenhuma seção tem `id`.
 3. A classe `selected` do menu muda no hover e não volta: o traço fica no último item em que o mouse passou, sem relação com a seção visível.
 4. Menu mobile:
@@ -37,6 +37,7 @@ Escrito em 18/10/2026 pelo Claude, antes de qualquer código. As escolhas do pla
 8. No celular, o telefone do cabeçalho some, e em nenhum lugar o número é um link `tel:`.
 9. A seção "sobre" sobrepõe a seguinte com `top: 30px` e `z-index`, e o depoimento sobe com `top: -70px` relativo, que desloca o desenho mas deixa o espaço original vazio.
 10. Duas das três fotos das etapas não têm legenda no HTML (o mockup tem).
+11. As mesmas duas fotos têm `float` inline (`index.html`, linhas 136 e 140), que vence o `float: none` da media query de até 1024px (`style.css`, linha 494): no tablet e no celular elas não ficam centralizadas como o CSS pretendia. Apontado pelo Codex na revisão de 18/10/2026.
 
 ## Acessibilidade
 
@@ -61,7 +62,7 @@ Escrito em 18/10/2026 pelo Claude, antes de qualquer código. As escolhas do pla
 - Font Awesome 4.7 (cerca de 1,1 MB em oito arquivos) para um único ícone, o do menu.
 - Os dois fundos de ondas pesam 2,2 MB, e a foto de rosto, 560 KB, em PNG.
 - Layout com `float` e `div.clear` em quase todas as seções; estilos inline (floats, margens, borda); `div` vazias como separadores na comparação.
-- Menu escrito três vezes: `ul.nav-desktop` (que na verdade é o menu do celular), `nav.desktop` e `nav.mobile`.
+- A lista de links do menu está escrita duas vezes: `ul.nav-desktop` (que na verdade é o menu do celular) e a de `nav.desktop`; `nav.mobile` só tem o ícone que abre a primeira.
 - Google Fonts na API antiga, sem `display=swap`; `font-family: "Roboto"` sem fonte reserva.
 
 ## Conteúdo e identidade
@@ -77,7 +78,7 @@ Escrito em 18/10/2026 pelo Claude, antes de qualquer código. As escolhas do pla
 
 **Atualizado:** viewport e `lang`; títulos em ordem (`h1` → `h2` → `h3`); links para cada seção; layout com flexbox e grid no lugar dos floats; tamanhos fluidos com `clamp()` e variáveis em `:root`; Google Fonts com `display=swap`; texto e cores no padrão AA.
 
-**Substituído** (propostas D1 a D9 em [`decisoes.md`](decisoes.md)):
+**Substituído** (decisões D1 a D9 e D11 em [`decisoes.md`](decisoes.md)):
 
 - identidade fictícia, sem a marca registrada do alinhador;
 - fotos de licença livre;
@@ -85,11 +86,11 @@ Escrito em 18/10/2026 pelo Claude, antes de qualquer código. As escolhas do pla
 - ondas em SVG;
 - um menu só, em JavaScript puro, sem jQuery e sem Font Awesome;
 - o conteúdo que falta, tirado dos mockups;
-- formulários com rótulo, validação e confirmação;
+- formulários com rótulo, validação e confirmação, e sem envio quando não houver JavaScript (D11, vinda da revisão do Codex);
 - o bloco da dentista no contato com iniciais no lugar da foto real;
 - telefone clicável e visível no celular.
 
-**Prioridade 1 — correções:** os bugs 1 a 10, a acessibilidade e a identidade.
+**Prioridade 1 — correções:** os bugs 1 a 11, a acessibilidade e a identidade.
 
 **Prioridade 2 — melhorias:** responsividade em quatro faixas (desktop, notebook, tablet, celular); estados de foco e hover; `prefers-reduced-motion`; rolagem suave; imagens otimizadas; meta description e favicon.
 
@@ -97,6 +98,6 @@ Escrito em 18/10/2026 pelo Claude, antes de qualquer código. As escolhas do pla
 
 **Fora do escopo** (vão como recomendação no README): envio real dos formulários, que precisa de servidor ou serviço externo; testes automatizados no repositório, que trariam `package.json` e dependências a um projeto estático.
 
-**Como vai ser verificado:** validador de HTML (`html-validate`); axe-core no desktop e no celular, com o menu aberto; contraste dos textos sobre as ondas e as fotos; navegador em 375, 768, 1024 e 1440px, sem rolagem horizontal; menu pelo mouse, pelo teclado, com Esc e com clique fora; formulários com campos vazios, e-mail inválido e envio válido; página com o JavaScript desligado. Cada resultado vai para a passagem em [`andamento.md`](andamento.md).
+**Como vai ser verificado:** validador de HTML (`html-validate`); axe-core no desktop e no celular, com o menu aberto; contraste dos textos sobre as ondas e as fotos; navegador em 320, 375, 768, 1024 e 1440px, sem rolagem horizontal; zoom de 200% sem conteúdo cortado; as três fotos das etapas no tablet e no celular; menu pelo mouse, pelo teclado, com Esc, com clique fora e ao escolher um link; janela redimensionada do celular para o desktop com o menu aberto; formulários com campos vazios, e-mail inválido e envio válido; página com o JavaScript desligado, incluindo uma tentativa de envio dos formulários. As três primeiras inclusões e as duas últimas vieram da revisão do Codex de 18/10/2026. Cada resultado vai para a passagem em [`andamento.md`](andamento.md).
 
 **Commits:** um por seção ou funcionalidade, na branch `claude/modernizacao`. A integração na `main` espera a aprovação do Codex e o OK do Pedro.
