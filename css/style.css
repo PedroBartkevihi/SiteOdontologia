@@ -738,3 +738,134 @@ section.diferencas h2 span{
 .item-diferencas-2 strong{
 	color: var(--verde-escuro);
 }
+
+section.contato{
+	position: relative;
+	padding: clamp(120px, 14vw, 190px) 0 var(--espaco-secao);
+	background: linear-gradient(160deg, #a8eedb 0%, var(--menta-2) 45%, var(--menta-3) 100%);
+}
+
+section.contato::before{
+	content: "";
+	position: absolute;
+	top: -1px;
+	right: 0;
+	left: 0;
+	height: clamp(60px, 9vw, 130px);
+	background: var(--onda-cima-branca) top / 100% 100% no-repeat;
+	pointer-events: none;
+}
+
+section.contato h2{
+	margin-bottom: 40px;
+	color: var(--verde-escuro);
+	font-size: clamp(1.5rem, 2.6vw, 1.875rem);
+	font-weight: 700;
+	text-align: center;
+}
+
+.contato-wraper{
+	display: grid;
+	grid-template-columns: 1fr 1.2fr;
+	gap: clamp(32px, 5vw, 64px);
+	align-items: start;
+	max-width: 920px;
+	margin: 0 auto;
+}
+
+.contato-info{
+	color: var(--verde-escuro);
+	text-align: center;
+}
+
+.box-avatar{
+	display: grid;
+	place-items: center;
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+	border: 6px solid rgba(255,255,255,0.85);
+	border-radius: 50%;
+	background: linear-gradient(135deg, var(--verde), var(--verde-escuro));
+	color: #fff;
+	font-size: 2.5rem;
+	font-weight: 300;
+	letter-spacing: 0.04em;
+	box-shadow: var(--sombra-suave);
+}
+
+.dentista-nome{
+	margin-top: 14px;
+	font-weight: 700;
+}
+
+.dentista-cargo{
+	font-size: 0.9375rem;
+}
+
+.contato-info > p{
+	margin-top: 24px;
+	line-height: 1.8;
+	overflow-wrap: anywhere;
+}
+
+.contato-info a{
+	color: inherit;
+	font-weight: 700;
+}
+
+.form-contato .form-group + .form-group{
+	margin-top: 14px;
+}
+
+.form-contato label{
+	display: block;
+	margin-bottom: 6px;
+	color: var(--verde-escuro);
+	font-size: 0.9375rem;
+	font-weight: 500;
+}
+
+.form-contato label span{
+	font-weight: 400;
+}
+
+.form-contato input:not([type=submit]),
+.form-contato textarea{
+	display: block;
+	width: 100%;
+	height: 48px;
+	padding: 0 20px;
+	border: 2px solid var(--verde);
+	border-radius: var(--raio-pilula);
+	background-color: #fff;
+	transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.form-contato textarea{
+	height: auto;
+	min-height: 120px;
+	padding: 12px 20px;
+	border-radius: 24px;
+	resize: vertical;
+}
+
+.form-contato input:not([type=submit]):focus,
+.form-contato textarea:focus{
+	border-color: var(--verde-escuro);
+	box-shadow: 0 0 0 4px rgba(10,117,96,0.25);
+	outline: none;
+}
+
+.form-contato input[type=submit]{
+	height: 52px;
+	margin-top: 8px;
+	padding: 0 32px;
+}
+
+.aviso-demo{
+	margin-top: 12px;
+	color: var(--verde-escuro);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
