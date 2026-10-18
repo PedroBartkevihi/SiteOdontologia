@@ -20,6 +20,14 @@ A referência é o último commit, não a branch, porque o conteúdo da branch m
 
 <!-- passagens abaixo, a mais recente primeiro -->
 
+## Passagem: modernização do projeto_09 — revisada (18/10/2026, Claude)
+- Objetivo: o mesmo da passagem de implementação, mais abaixo.
+- Etapa: revisado. O Codex aprovou a implementação na rodada 2, sobre `bf71e7f`, sem pontos pendentes ("os quatro pontos anteriores foram resolvidos"; "não encontrei regressões nem impedimentos técnicos à integração"). Ao todo, a tarefa teve 4 rodadas de revisão do Codex: o plano (ajustes sobre `08b9ac2`, aprovado sobre `d0551f5`) e a implementação (ajustes sobre `9755225`, aprovado sobre `bf71e7f`).
+- Código: branch `claude/modernizacao`; o último commit é o desta passagem, sobre `bf71e7f`; sem commit: nada.
+- Verificações: as da passagem "ajustes da revisão", logo abaixo, valem para este código (desde `436a65d` só mudaram arquivos de `docs/`).
+- Pendências: OK do Pedro para integrar na `main`; publicação (repositório no GitHub e GitHub Pages), que é outro passo, também com o OK dele.
+- Próxima ação: com o OK do Pedro, integrar a branch na `main`.
+
 ## Passagem: modernização do projeto_09 — ajustes da revisão (18/10/2026, Claude)
 - Objetivo: o mesmo da passagem de implementação, logo abaixo.
 - Etapa: implementado; revisão final do Codex em andamento. Rodada 1 sobre `9755225`: "ajustes", com 2 pontos médios (e-mail malformado como `ana@exemplo..com` passava; rótulo do e-mail do topo escondido, contra a D7) e 2 baixos (avisos sem JavaScript sem o telefone e o e-mail da D11; linhas "Implementação" das decisões ainda em "ainda não"). Os 4 foram aplicados em `d608880`, `436a65d` e no commit desta passagem. Rodada 2 a seguir.
