@@ -20,6 +20,22 @@ A referência é o último commit, não a branch, porque o conteúdo da branch m
 
 <!-- passagens abaixo, a mais recente primeiro -->
 
+## Passagem: modernização do projeto_09 — ajustes da revisão (18/10/2026, Claude)
+- Objetivo: o mesmo da passagem de implementação, logo abaixo.
+- Etapa: implementado; revisão final do Codex em andamento. Rodada 1 sobre `9755225`: "ajustes", com 2 pontos médios (e-mail malformado como `ana@exemplo..com` passava; rótulo do e-mail do topo escondido, contra a D7) e 2 baixos (avisos sem JavaScript sem o telefone e o e-mail da D11; linhas "Implementação" das decisões ainda em "ainda não"). Os 4 foram aplicados em `d608880`, `436a65d` e no commit desta passagem. Rodada 2 a seguir.
+- Código: branch `claude/modernizacao`; o último commit é o desta passagem (`docs: decisões com os commits e passagem dos ajustes da revisão`), sobre `436a65d`; sem commit: nada.
+- Verificações, repetidas depois dos ajustes: as capturas e os testes da passagem anterior podiam ter usado CSS em cache no Chrome sem interface (o `http.server` não manda `Cache-Control`), o que apareceu ao conferir o formulário do topo. Com o cache desligado (`Network.setCacheDisabled`), tudo foi refeito sobre `436a65d`:
+  - `npx html-validate index.html` → só `prefer-button` (2) e `tel-non-breaking` (10, agora com os links dos avisos), as mesmas regras de estilo explicadas abaixo.
+  - `node --check js/script.js` → ok.
+  - axe-core em 1440px e em 375px com o menu aberto → 0 violações; 59 textos sobre degradê medidos à parte → pior caso 4,98:1.
+  - Larguras 320 a 1440px e 640px (zoom de 200%) → sem rolagem horizontal; menu aberto e janela crescendo → fecha e volta ao normal; sem JavaScript → botões desativados, dois avisos com telefone e e-mail, nenhum pedido de rede no Enter nem no clique.
+  - Formulários → mesmos resultados da passagem anterior; e-mails `ana@exemplo..com`, `ana@exemplo.com.`, `ana@.exemplo.com`, `ana@email`, `ana@@email.com` e `ana email@x.com` recusados; `ana@email.com`, `ana.souza+teste@sub.exemplo.com.br` e `a@b.co` aceitos.
+  - Formulário do topo: rótulo visível acima do campo; botão alinhado ao campo no desktop; no celular a ordem é rótulo, campo, erro, botão, aviso e confirmação, conferida pelas posições na tela, com e sem JavaScript.
+  - Seção visível no menu → mesmos resultados, em 1440 e 375px.
+  - Não executado: leitor de tela real e navegadores além do Chrome.
+- Pendências: rodada 2 da revisão do Codex (no máximo 3 rodadas); OK do Pedro para integrar na `main`; publicação, também com o OK dele.
+- Próxima ação: mandar a branch para a rodada 2 da revisão do Codex.
+
 ## Passagem: modernização do projeto_09 — implementação (18/10/2026, Claude)
 - Objetivo: recriar o exercício `projeto_09` (2017) como landing page moderna de uma clínica fictícia, seguindo `docs/diagnostico.md` e as decisões D1 a D11 de `docs/decisoes.md`.
 - Etapa: implementado; a página está completa (topo, benefícios, sobre, depoimento, etapas, comparação, contato e rodapé), com menu mobile, marcação da seção visível (D10a) e formulários de demonstração (D7 e D11). Falta a revisão final do Codex.

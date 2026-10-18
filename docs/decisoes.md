@@ -26,7 +26,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: o botão de envio dos dois formulários vem desativado no HTML e o JavaScript o ativa. Sem JavaScript, um aviso junto ao formulário diz que o envio é só uma demonstração e mostra o telefone e o e-mail da clínica. Nada é enviado ao servidor. Com JavaScript, a confirmação também deixa claro que é uma demonstração.
 - Motivo: ninguém cai numa página de erro, e quem visita entende que o formulário é uma demonstração. O telefone e o e-mail mostrados também são fictícios (D1), então o aviso não promete atendimento real (corrigido em 18/10/2026; apontado pelo Codex na rodada 2).
 - Alternativas descartadas: deixar como no Projeto5 (envio por POST que termina em erro do servidor) — oferecida, o Pedro escolheu o botão desativado.
-- Implementação: ainda não.
+- Implementação: `454eb9a` (botões desativados e aviso em `<noscript>`), `02ff69e` (o JavaScript ativa os botões) e `436a65d` (telefone e e-mail no aviso, apontado pelo Codex na revisão da implementação).
 
 ## D1 — Identidade fictícia (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -35,7 +35,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: clínica fictícia "Clara Odontologia", com a dentista "Dra. Helena Prado", em Florianópolis. O tratamento é chamado de "alinhadores transparentes", sem a marca. Telefone `(48) 1234-5678` (número de assinante não começa com 1, então não pode ser de ninguém) e e-mail no domínio reservado `.example`, para que os links `tel:` e `mailto:` não cheguem a uma pessoa real. Nenhuma clínica com esse nome foi achada em Florianópolis numa busca na web em 18/10/2026.
 - Motivo: o repositório vai ser público; não deve parecer o site da clínica real nem anunciar uma marca registrada.
 - Alternativas descartadas: o nome "Translúcida Odontologia" — oferecido, o Pedro escolheu "Clara"; manter a marca do alinhador como nome do tratamento — anúncio de marca real num site fictício; telefone e domínio com cara de reais — um clique em `tel:` ou `mailto:` poderia chegar a alguém.
-- Implementação: ainda não.
+- Implementação: `454eb9a` (marcação com a identidade fictícia), `f9e421f` (favicon) e `830dec5` (README); na branch `claude/modernizacao`.
 
 ## D2 — Fotos de licença livre (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -44,7 +44,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: trocar todas por fotos do Pexels, sem metadados (EXIF), em JPG otimizado: as quatro redondas do topo, as três das etapas e a do "sobre". Sem rosto inteiro: sorrisos, alinhadores e mãos, como já são duas das quatro fotos redondas do original.
 - Motivo: licença clara para um repositório público; sem rosto inteiro, ninguém real fica parecendo paciente ou funcionário de uma clínica inventada.
 - Alternativas descartadas: manter as do curso — licença desconhecida e paciente identificável; fotos com rosto inteiro de modelos — pessoa real associada a uma clínica fictícia.
-- Implementação: ainda não.
+- Implementação: `d9e8980` (8 fotos do Pexels sem EXIF) e `454eb9a` (textos alternativos).
 
 ## D3 — Ícones em SVG (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -53,7 +53,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: redesenhar os seis no mesmo estilo (traço verde, cantos arredondados) em SVG dentro do HTML, com o mesmo significado: círculo tracejado (transparente), hambúrguer (comer), dente com aparelho riscado (sem fios), relógio (rapidez), rosto sorrindo (falar) e dente sorrindo (ver o resultado).
 - Motivo: nitidez em qualquer tela, cor controlada pelo CSS e nenhum arquivo de licença incerta.
 - Alternativas descartadas: manter os PNG — borrados e de origem incerta; uma biblioteca de ícones — dependência para seis desenhos.
-- Implementação: ainda não.
+- Implementação: `454eb9a` (os seis ícones em SVG no HTML) e `552fc61` (estilo).
 
 ## D4 — Ondas em SVG (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -62,7 +62,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: degradê verde-água em CSS e ondas em SVG no próprio HTML (ou no CSS), com o mesmo desenho do mockup.
 - Motivo: cerca de 2,2 MB a menos, nitidez em qualquer largura e cores ajustáveis para o contraste.
 - Alternativas descartadas: os PNG atuais otimizados — continuariam pesando centenas de KB e perdendo nitidez.
-- Implementação: ainda não.
+- Implementação: `ff2958c` (ondas em SVG como variáveis do CSS), aplicadas em `51d6c63`, `736aa9e`, `c3d109c` e `74c6911`.
 
 ## D5 — Menu único em JavaScript puro (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -71,7 +71,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: um `<nav>` só, com botão acessível (`aria-expanded`, `aria-controls`) que abre a lista no celular e fecha com Esc, com clique fora e ao escolher um item. Ícone das três barras em CSS. Sem jQuery e sem Font Awesome. Sem JavaScript, os links aparecem como lista.
 - Motivo: corrige os bugs do menu (bug 4 do diagnóstico) e tira duas dependências que só serviam para isso.
 - Alternativas descartadas: atualizar o jQuery para a versão mais nova — dependência inteira para cerca de 40 linhas.
-- Implementação: ainda não.
+- Implementação: `454eb9a` (um `<nav>` só), `30d4a74` (estilo), `5a9349c` (menu do celular) e `549b3e0` (JavaScript, sem jQuery e sem Font Awesome).
 
 ## D6 — Conteúdo dos mockups (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -80,7 +80,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: seguir os mockups onde o HTML está incompleto: seis passos com os títulos do mockup, os doze itens reais da comparação, legenda nas três fotos das etapas e o botão "Agendar avaliação gratuita". Textos reescritos sem a marca e sem promessas de saúde além do que o mockup já dizia.
 - Motivo: completa o projeto como foi desenhado, sem inventar seções.
 - Alternativas descartadas: manter o Lorem ipsum — a página pareceria inacabada; criar seções novas — fugiria do original.
-- Implementação: ainda não.
+- Implementação: `454eb9a` (seis passos, comparação completa, legendas e botão do mockup).
 
 ## D7 — Formulários sem servidor (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -89,7 +89,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: rótulos visíveis, tipos certos (`email`, `tel`), telefone opcional como no mockup, validação em português com o erro embaixo do campo, foco no primeiro erro e mensagem de confirmação na tela. `method="post"` nos dois, para os dados nunca irem para a URL.
 - Motivo: corrige os bugs 5 e 6 e deixa claro para quem testa o que aconteceu.
 - Alternativas descartadas: ligar a um serviço de formulários — precisa de conta; fica como recomendação no README.
-- Implementação: ainda não.
+- Implementação: `454eb9a` (rótulos, tipos e `method="post"`), `02ff69e` (validação e confirmação), `d608880` (e-mail malformado recusado) e `436a65d` (rótulo visível no e-mail do topo); os dois últimos vieram da revisão do Codex da implementação.
 
 ## D8 — Bloco da dentista no contato (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -98,7 +98,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: um cartão com as iniciais da dentista fictícia num círculo verde, o nome e "Ortodontista", no lugar da foto e dos selos.
 - Motivo: mantém o desenho do mockup sem usar o rosto de ninguém nem os selos da marca.
 - Alternativas descartadas: foto de banco de imagens — pessoa real como dentista inventada; tirar o bloco — o contato perderia o rosto da clínica que o mockup pede.
-- Implementação: ainda não.
+- Implementação: `454eb9a` e `c3d109c` (cartão com as iniciais).
 
 ## D9 — Telefone clicável e visível no celular (18/10/2026)
 - Estado: aceita (18/10/2026)
@@ -107,7 +107,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: todos os números como link `tel:`. No celular, o telefone fica visível no topo, na chamada ("Ou ligue para…") e no contato.
 - Motivo: no celular, ligar é o caminho mais curto para agendar.
 - Alternativas descartadas: manter escondido — perde o contato mais rápido justamente no celular.
-- Implementação: ainda não.
+- Implementação: `454eb9a` (links `tel:`) e `5a9349c` (telefone visível no topo do celular).
 
 ## D10 — Opcionais (18/10/2026)
 - Estado: (a) aceita; (b) rejeitada (18/10/2026)
@@ -116,7 +116,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: (a) o traço do menu acompanha a seção visível (`IntersectionObserver`); (b) blocos marcados aparecem ao entrar na tela, respeitando `prefers-reduced-motion` e visíveis sem JavaScript.
 - Motivo: (a) termina o que o original começou; (b) mantém a série coerente.
 - Alternativas descartadas: (b) blocos que aparecem ao rolar — oferecido junto, o Pedro escolheu só o (a).
-- Implementação: (a) ainda não; (b) não será feito.
+- Implementação: (a) `85d4354`; (b) não será feito.
 
 ## Fluxo da modernização (18/10/2026)
 - Estado: aceita
@@ -125,4 +125,4 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Decisão: o Claude implementa. O Codex revisa só lendo, em dois pontos: o diagnóstico com o plano (antes do código) e a implementação final, cada um até aprovar, no máximo 3 rodadas. O trabalho fica na branch `claude/modernizacao`, com a passagem em `docs/andamento.md`; a integração na `main` só acontece depois da aprovação do Codex e do OK do Pedro, e a publicação é outro passo, também com o OK dele. Os modelos de instruções para agentes (este arquivo, `AGENTS.md`, `CLAUDE.md`, `docs/andamento.md` e o modelo de PR) entram desde o primeiro commit.
 - Motivo: revisar o plano antes de codar evita retrabalho; a branch deixa a `main` só com o que foi revisado e aprovado.
 - Alternativas descartadas: o Codex revisar só o código final — o plano não passaria pelo olhar dele; dividir a implementação, com o Codex aberto pelo Pedro no app dele — mais trabalho para o Pedro; ficar só com o README, como nos projetos anteriores — as decisões e a passagem não ficariam no repositório; commits direto na `main` — pularia as etapas de integração e publicação.
-- Implementação: commit inicial da `main` (instruções e modelos); o resto, ainda não.
+- Implementação: `e264c08` na `main` (instruções e modelos); o trabalho e as revisões do Codex na branch `claude/modernizacao`, registrados em `docs/andamento.md`. Integração na `main` e publicação ainda não.
