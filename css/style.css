@@ -660,7 +660,7 @@ section.etapas h2 strong{
 
 section.diferencas{
 	padding: var(--espaco-secao) 0;
-	background: linear-gradient(#fff, var(--cor-fundo-alt));
+	background: linear-gradient(#fff, var(--cor-fundo-alt) 45%, var(--cor-fundo-alt) 70%, #fff);
 }
 
 section.diferencas > .container{
