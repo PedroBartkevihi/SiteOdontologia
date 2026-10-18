@@ -869,3 +869,36 @@ section.contato h2{
 	font-size: 0.875rem;
 	font-weight: 500;
 }
+
+footer{
+	position: relative;
+	padding: clamp(90px, 11vw, 140px) 0 28px;
+	background-color: var(--verde-escuro);
+	color: #fff;
+	text-align: center;
+}
+
+footer::before{
+	content: "";
+	position: absolute;
+	top: -1px;
+	right: 0;
+	left: 0;
+	height: clamp(50px, 8vw, 110px);
+	background: var(--onda-cima-menta) top / 100% 100% no-repeat;
+	pointer-events: none;
+}
+
+footer .logo{
+	color: #fff;
+}
+
+footer .logo-sorriso{
+	stroke: var(--menta-1);
+}
+
+footer p{
+	margin-top: 22px;
+	color: var(--menta-3);
+	font-size: 0.875rem;
+}
