@@ -1101,3 +1101,33 @@ footer :focus-visible{
 		transition-duration: 0.01ms !important;
 	}
 }
+
+.erro-campo{
+	margin-top: 6px;
+	padding-left: 20px;
+	color: var(--cor-erro);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+.form-group.invalido input,
+.form-group.invalido textarea{
+	border-color: var(--cor-erro);
+}
+
+.form-status{
+	margin-top: 12px;
+	font-weight: 500;
+}
+
+.form-status:empty{
+	margin: 0;
+}
+
+.form-status.sucesso{
+	padding: 12px 18px;
+	border-radius: 16px;
+	background-color: #fff;
+	color: var(--verde-escuro);
+	box-shadow: var(--sombra-suave);
+}
