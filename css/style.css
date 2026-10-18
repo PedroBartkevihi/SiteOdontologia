@@ -431,3 +431,55 @@ section.diferenciais > .container{
 	color: var(--cor-texto-suave);
 	font-size: 0.9375rem;
 }
+
+section.sobre{
+	padding-bottom: calc(var(--espaco-secao) * 0.5);
+}
+
+.sobre > .container{
+	display: grid;
+	grid-template-columns: 1.1fr 1fr;
+	gap: clamp(32px, 5vw, 72px);
+	align-items: center;
+}
+
+.sobre-container:first-child{
+	position: relative;
+}
+
+.sobre-container:first-child::before{
+	content: "";
+	position: absolute;
+	top: 14%;
+	left: -18px;
+	z-index: 1;
+	width: 56px;
+	height: 56px;
+	border: 12px solid var(--menta-2);
+	border-radius: 50%;
+}
+
+.sobre-container img{
+	width: 100%;
+	border-radius: var(--raio);
+	box-shadow: var(--sombra);
+}
+
+.sobre-container h2{
+	color: var(--cor-texto);
+	font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.sobre-container h2 > strong{
+	color: var(--verde);
+	font-weight: 700;
+}
+
+.sobre-container p{
+	margin-top: 12px;
+	color: var(--cor-texto-suave);
+}
+
+.sobre-container p + h2{
+	margin-top: 36px;
+}
