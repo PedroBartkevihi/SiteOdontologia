@@ -24,7 +24,7 @@ Estados: **proposta** (aguarda quem decide), **aceita**, **rejeitada** e **subst
 - Proposta por: Codex (revisão do plano, rodada 1, commit `08b9ac2`), redigida pelo Claude; decidida por: Pedro
 - Contexto: sem servidor, o envio nativo de um formulário com `method="post"` (D7) cai numa página de erro (501 no `python -m http.server`, 405 no GitHub Pages), e o projeto exige que a página continue usável sem JavaScript.
 - Decisão: o botão de envio dos dois formulários vem desativado no HTML e o JavaScript o ativa. Sem JavaScript, um aviso junto ao formulário diz que o envio é só uma demonstração e mostra o telefone e o e-mail da clínica. Nada é enviado ao servidor. Com JavaScript, a confirmação também deixa claro que é uma demonstração.
-- Motivo: ninguém cai numa página de erro, e o contato continua possível pelo telefone e pelo e-mail.
+- Motivo: ninguém cai numa página de erro, e quem visita entende que o formulário é uma demonstração. O telefone e o e-mail mostrados também são fictícios (D1), então o aviso não promete atendimento real (corrigido em 18/10/2026; apontado pelo Codex na rodada 2).
 - Alternativas descartadas: deixar como no Projeto5 (envio por POST que termina em erro do servidor) — oferecida, o Pedro escolheu o botão desativado.
 - Implementação: ainda não.
 
