@@ -902,3 +902,166 @@ footer p{
 	color: var(--menta-3);
 	font-size: 0.875rem;
 }
+
+@media screen and (max-width: 1024px){
+	section.diferenciais > .container{
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	section.etapas > .container{
+		grid-template-columns: 1fr;
+		max-width: 680px;
+	}
+
+	.etapas__single:first-of-type{
+		max-width: 520px;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.topo > .container{
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.telefone-header{
+		margin-left: auto;
+	}
+
+	.telefone-header a{
+		font-size: 1.125rem;
+	}
+
+	nav.menu{
+		order: 3;
+		margin: 0;
+	}
+
+	html:not(.js) nav.menu{
+		flex-basis: 100%;
+	}
+
+	.js nav.menu .mobile{
+		display: flex;
+	}
+
+	.js nav.menu ul{
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		z-index: 10;
+		display: none;
+		flex-direction: column;
+		gap: 0;
+		background-color: #fff;
+		box-shadow: var(--sombra);
+	}
+
+	.js nav.menu ul.aberto{
+		display: flex;
+	}
+
+	.js nav.menu li + li{
+		border-top: 1px solid var(--cor-borda);
+	}
+
+	.js nav.menu li > span{
+		display: none;
+	}
+
+	.js nav.menu ul a{
+		padding: 14px 16px;
+		text-align: center;
+	}
+
+	.js nav.menu li.selected a{
+		background-color: var(--menta-3);
+	}
+
+	.content-header > .container{
+		grid-template-columns: 1fr;
+	}
+
+	.content-header .two{
+		grid-template-columns: repeat(4, 1fr);
+		justify-self: start;
+		max-width: 560px;
+	}
+
+	.content-header .two img{
+		border-width: 4px;
+	}
+
+	.sobre > .container{
+		grid-template-columns: 1fr;
+		max-width: 680px;
+	}
+
+	.contato-wraper{
+		grid-template-columns: 1fr;
+		max-width: 560px;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.logo-nome{
+		font-size: 1.75rem;
+	}
+
+	.telefone-header a{
+		font-size: 0.9375rem;
+	}
+
+	.form-chamada .form-group{
+		flex-basis: 100%;
+		max-width: none;
+	}
+
+	.form-chamada input[type=submit],
+	.form-contato input[type=submit]{
+		width: 100%;
+	}
+
+	section.diferenciais > .container{
+		grid-template-columns: 1fr;
+	}
+
+	.etapas__group img{
+		width: 140px;
+	}
+
+	.etapas__group:nth-child(2) img{
+		width: 120px;
+	}
+
+	.etapas__group:nth-child(3) img{
+		width: 110px;
+		margin-left: 0;
+	}
+
+	.etapas__group2 .circle{
+		width: 52px;
+		height: 52px;
+		font-size: 1.5rem;
+	}
+
+	.line{
+		top: 52px;
+		left: 26px;
+	}
+
+	section.diferencas > .container{
+		grid-template-columns: 1fr;
+	}
+
+	.diferencas__single:first-of-type{
+		padding-bottom: 32px;
+		border-right: 0;
+		border-bottom: 1px solid var(--cor-borda);
+	}
+
+	.diferencas__single + .diferencas__single{
+		padding-top: 32px;
+	}
+}
