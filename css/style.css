@@ -336,16 +336,59 @@ nav.menu .mobile.ativo span:nth-child(3){
 }
 
 .form-chamada{
-	display: flex;
-	flex-wrap: wrap;
-	gap: 12px;
-	align-items: flex-start;
+	display: grid;
+	grid-template-columns: minmax(0, 300px) auto;
+	gap: 6px 12px;
+	align-items: center;
+	justify-content: start;
 	margin-top: 28px;
 }
 
 .form-chamada .form-group{
-	flex: 1 1 240px;
-	max-width: 300px;
+	display: contents;
+}
+
+.form-chamada label{
+	grid-column: 1 / -1;
+	grid-row: 1;
+	color: var(--verde-escuro);
+	font-size: 0.9375rem;
+	font-weight: 500;
+}
+
+.form-chamada input[type=email]{
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.form-chamada input[type=submit]{
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.form-chamada .erro-campo{
+	grid-column: 1 / -1;
+	grid-row: 3;
+	margin-top: 0;
+}
+
+.form-chamada noscript,
+.form-chamada .form-status{
+	grid-column: 1 / -1;
+}
+
+.form-chamada noscript{
+	grid-row: 4;
+}
+
+.form-chamada .form-status{
+	grid-row: 5;
+}
+
+.form-chamada noscript,
+.form-chamada .form-status,
+.form-chamada .erro-campo{
+	contain: inline-size;
 }
 
 .form-chamada input[type=email]{
@@ -363,10 +406,6 @@ nav.menu .mobile.ativo span:nth-child(3){
 	border-color: var(--verde-escuro);
 	box-shadow: 0 0 0 4px rgba(10,117,96,0.25);
 	outline: none;
-}
-
-.form-chamada .form-status{
-	flex-basis: 100%;
 }
 
 .content-header .ligue{
@@ -1013,9 +1052,21 @@ footer p{
 		font-size: 0.9375rem;
 	}
 
-	.form-chamada .form-group{
-		flex-basis: 100%;
-		max-width: none;
+	.form-chamada{
+		grid-template-columns: 1fr;
+	}
+
+	.form-chamada input[type=submit]{
+		grid-column: 1;
+		grid-row: 4;
+	}
+
+	.form-chamada noscript{
+		grid-row: 5;
+	}
+
+	.form-chamada .form-status{
+		grid-row: 6;
 	}
 
 	.form-chamada input[type=submit],
@@ -1130,4 +1181,10 @@ footer :focus-visible{
 	background-color: #fff;
 	color: var(--verde-escuro);
 	box-shadow: var(--sombra-suave);
+}
+
+.aviso-demo a{
+	color: inherit;
+	font-weight: 700;
+	overflow-wrap: anywhere;
 }
