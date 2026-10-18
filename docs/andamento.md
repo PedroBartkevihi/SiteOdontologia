@@ -20,6 +20,14 @@ A referência é o último commit, não a branch, porque o conteúdo da branch m
 
 <!-- passagens abaixo, a mais recente primeiro -->
 
+## Passagem: modernização do projeto_09 — integrada na main (18/10/2026, Claude)
+- Objetivo: o mesmo da passagem de implementação, mais abaixo.
+- Etapa: integrado na main. O Pedro autorizou a integração ("Pode integrar a branch claude/modernizacao na main", 18/10/2026); merge com `--no-ff` no commit `ba97a59`, que traz os 30 commits da branch. O conteúdo da `main` ficou idêntico ao do último commit revisado da branch (`60ae0cc`; desde `bf71e7f`, aprovado pelo Codex, só mudou `docs/andamento.md`).
+- Código: `main`, último commit é o desta passagem, sobre `ba97a59`; a branch `claude/modernizacao` continua existindo, parada em `60ae0cc`; sem commit: nada.
+- Verificações: `git diff claude/modernizacao main` logo depois do merge → sem diferença; as verificações da página são as da passagem "ajustes da revisão", mais abaixo.
+- Pendências: publicação (repositório no GitHub e GitHub Pages), só com o OK do Pedro e o nome do repositório.
+- Próxima ação: com o OK do Pedro, criar o repositório, enviar a `main` e ativar o Pages.
+
 ## Passagem: modernização do projeto_09 — revisada (18/10/2026, Claude)
 - Objetivo: o mesmo da passagem de implementação, mais abaixo.
 - Etapa: revisado. O Codex aprovou a implementação na rodada 2, sobre `bf71e7f`, sem pontos pendentes ("os quatro pontos anteriores foram resolvidos"; "não encontrei regressões nem impedimentos técnicos à integração"). Ao todo, a tarefa teve 4 rodadas de revisão do Codex: o plano (ajustes sobre `08b9ac2`, aprovado sobre `d0551f5`) e a implementação (ajustes sobre `9755225`, aprovado sobre `bf71e7f`).
