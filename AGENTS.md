@@ -22,8 +22,8 @@ Vale para qualquer agente (Claude, Codex ou outro), em qualquer máquina. Leia t
 
 - HTML, CSS e JavaScript puros, sem framework, biblioteca ou etapa de build.
 - Preservar o estilo do código original: nomes de classe em português (inclusive os do original), indentação com tab e comentário no fechamento das divs.
-- Identidade fictícia: nenhum nome, marca, foto, telefone, e-mail ou endereço de pessoa ou empresa real.
-- Fotos só com licença livre e sem metadados (EXIF).
+- Identidade fictícia: nenhum nome, marca, logo, telefone, e-mail ou endereço de pessoa ou empresa real, e nenhuma pessoa real apresentada como dentista, funcionária ou paciente da clínica.
+- Fotos só com licença livre e sem metadados (EXIF). Fotos de pessoas, só sem rosto inteiro (sorrisos, mãos, alinhadores), para ninguém real parecer ligado à clínica (decisão D2).
 - Textos em português do Brasil; contraste mínimo WCAG AA; a página continua usável sem JavaScript.
 - Commits pequenos, com mensagens no padrão `tipo: descrição` em português (`feat:`, `fix:`, `style:`, `refactor:`, `docs:`, `chore:`).
 
