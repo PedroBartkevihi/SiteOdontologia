@@ -93,7 +93,7 @@ Escrito em 18/10/2026 pelo Claude, antes de qualquer código. As escolhas do pla
 
 **Prioridade 2 — melhorias:** responsividade em quatro faixas (desktop, notebook, tablet, celular); estados de foco e hover; `prefers-reduced-motion`; rolagem suave; imagens otimizadas; meta description e favicon.
 
-**Opcionais** (D10): o traço do menu acompanha a seção visível, que é o que a classe `selected` parece querer; blocos que aparecem ao rolar, como nos projetos anteriores.
+**Opcionais** (D10): o traço do menu acompanha a seção visível, que é o que a classe `selected` parece querer; blocos que aparecem ao rolar, como nos projetos anteriores. Em 18/10/2026 o Pedro aceitou o primeiro e recusou o segundo.
 
 **Fora do escopo** (vão como recomendação no README): envio real dos formulários, que precisa de servidor ou serviço externo; testes automatizados no repositório, que trariam `package.json` e dependências a um projeto estático.
 
